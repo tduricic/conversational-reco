@@ -8,6 +8,7 @@ The project is broken down into several Jupyter Notebooks, each tackling a speci
 
 ## Project Structure
 
+```
 conversational-reco/
 ├── .env                    # Environment variables (API keys) - DO NOT COMMIT TO GIT
 ├── .gitignore              # Specifies intentionally untracked files
@@ -29,6 +30,7 @@ conversational-reco/
 │   └── figures/            # Saved visualizations (e.g., word clouds, embedding plots)
 ├── README.md               # This file
 └── requirements.txt        # Python package dependencies
+```
 
 ## Notebook Descriptions
 
