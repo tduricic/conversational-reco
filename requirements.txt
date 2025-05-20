@@ -1,0 +1,36 @@
+# Core Data Handling & Utility
+pandas
+python-dotenv
+
+# Google Generative AI
+google-generativeai
+
+# Embeddings, Topic Modeling, ML
+sentence-transformers
+scikit-learn
+bertopic[visualization] # Includes umap-learn, hdbscan for BERTopic's default dimension reduction and clustering
+
+# Visualization
+matplotlib
+seaborn
+wordcloud
+
+# Recommender Systems with RecBole
+recbole
+# torch # RecBole's setup.py will specify a compatible PyTorch version
+# scipy # RecBole's setup.py will specify a compatible SciPy version
+pyyaml # Often a dependency for RecBole's config handling
+lightgbm # For RecBole's external model support (even if not directly run, it's checked)
+xgboost  # For RecBole's external model support (even if not directly run, it's checked)
+
+# Specific version for NumPy due to RecBole/Ray compatibility issues discussed (np.bool8 error)
+numpy==1.23.5
+
+# Notes:
+# 1. It's generally recommended to install these in a clean virtual environment.
+# 2. RecBole will pull in its specific PyTorch and SciPy dependencies. If you encounter
+#    further issues, you might need to pin PyTorch (e.g., torch>=1.7.0,<1.13.0) and
+#    SciPy (e.g., scipy>=1.7.0,<1.10.0) to versions known to be compatible with
+#    numpy==1.23.5 and your RecBole version.
+# 3. The `bertopic[visualization]` extra should install dependencies like `umap-learn` and `hdbscan`.
+#    If not, you might need to install them separately: `pip install umap-learn hdbscan`.
