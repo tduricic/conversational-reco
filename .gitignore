@@ -174,3 +174,5 @@ cython_debug/
 .pypirc
 
 .idea/
+notebooks/log_tensorboard/
+notebooks/log/

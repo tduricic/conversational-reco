@@ -58,7 +58,7 @@ conversational-reco/
 
 5.  **`05_conversational_movie_recommendation.ipynb`**:
     * **Purpose:** Demonstrates inference using a pre-trained RecBole model (e.g., LightGCN from notebook 04). Simulates a chatbot conversation using the Gemini API to provide personalized movie recommendations with explanations based on a user's liked movies.
-    * **Dependencies:** Requires a successfully trained model and processed dataset from notebook 04, and the `u.item` file from MovieLens 100k.
+    * **Dependencies:** Requires a successfully trained model and processed dataset from notebook 04, and RecBole's processed `ml-100k.item` file.
 
 ## Setup Instructions
 
@@ -88,10 +88,10 @@ conversational-reco/
     ```
     Replace `"YOUR_GEMINI_API_KEY_HERE"` with your actual Gemini API key. **Do not commit this file to version control.**
 
-5.  **Download Font for Word Clouds (for Notebook 03 & 02):**
+5.  **Download Font for Word Clouds (for Notebook 02 & 03):**
     * For word clouds to display multilingual characters correctly (especially Thai and Indonesian), a suitable font is needed.
     * Download a font like "Noto Sans Thai" or a general "Noto Sans" (which has broad Unicode coverage) from Google Fonts: [https://fonts.google.com/noto](https://fonts.google.com/noto)
-    * Create a `fonts/` directory in your project root.
+    * Create a `fonts/` directory in your project root if it doesn't exist.
     * Place the downloaded `.ttf` font file (e.g., `NotoSansThai-Regular.ttf` or `NotoSans-Regular.ttf`) into the `fonts/` directory.
     * Notebook `02` and `03` (in CELL 4) will attempt to use these fonts. Update the `FONT_PATH_USER_DEFINED` variable in those notebooks if your font file has a different name or location.
 
@@ -102,8 +102,8 @@ conversational-reco/
     Refer to the detailed instructions within notebook 04 before running it.
 
 7.  **MovieLens 100k Data (for Notebooks 04 & 05):**
-    * Notebook `04` is configured to automatically download the MovieLens 100k dataset into the `recbole_data/ml-100k/` directory when it runs for the first time. It should also save its processed version here due to `'save_dataset': True`.
-    * Notebook `05` relies on the raw `u.item` file being present in `recbole_data/ml-100k/` for movie titles and genres. If, after running notebook 04, this file is missing, you must manually download `ml-100k.zip` from [GroupLens](https://grouplens.org/datasets/movielens/100k/), extract it, and copy `u.item` into `[PROJECT_ROOT]/recbole_data/ml-100k/`.
+    * Notebook `04` is configured to automatically download the MovieLens 100k dataset and save its processed version (including `ml-100k.item`, `.inter`, `.user` files and ID mappings) into the `recbole_data/ml-100k/` directory due to the `'save_dataset': True` setting.
+    * Notebook `05` relies on RecBole's processed `ml-100k.item` file being present in `recbole_data/ml-100k/` for movie titles and genres. Ensure notebook 04 has run successfully to create these files.
 
 ## Running the Notebooks
 
@@ -116,7 +116,7 @@ conversational-reco/
     ```
 3.  Navigate to the `notebooks/` directory in the Jupyter interface.
 4.  Open and run the notebooks sequentially (01 through 05), as later notebooks often depend on the outputs of earlier ones.
-5.  Pay close attention to any specific instructions or prerequisites mentioned at the beginning of each notebook, especially for notebook 04 regarding RecBole patches.
+5.  Pay close attention to any specific instructions or prerequisites mentioned at the beginning of each notebook, especially for notebook 04 regarding RecBole patches and dataset generation.
 
 ## Key Technologies Used
 
